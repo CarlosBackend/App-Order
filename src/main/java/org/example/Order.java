@@ -39,4 +39,14 @@ public class Order {
     public void addItem(OrderItem item) {
         items.add(item);
     }
+    public void removeItem(OrderItem item) {
+        items.remove(item);
+    }
+    public Double total(){
+        double sum = 0;
+        for (OrderItem item : items) {
+            sum += item.subTotal();
+        }
+        return sum;
+    }
 }
